@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sliberat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 13:59:30 by sliberat          #+#    #+#             */
-/*   Updated: 2023/12/17 14:10:33 by sliberat         ###   ########.fr       */
+/*   Created: 2023/12/16 22:17:06 by sliberat          #+#    #+#             */
+/*   Updated: 2023/12/16 22:36:22 by sliberat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int ft_ultimate_range(int **range, int min, int max)
 {
-	int	i;
-
-	i = 1;
-	if (nb > 0)
+	int i;
+	i = 0;
+	if (min >= max)
 	{
-		while (i * i <= nb)
-		{
-			if (i * i == nb)
-				return (i);
-			if (i > 46340)
-				return (0);
-			i++;
-		}
+		*range = NULL;
+		return 0;
 	}
-	return (0);
+    
+    int size = max - min;
+    
+    *range = (int *)malloc(size * sizeof(int));
+    
+    if (*range == NULL)
+        return (-1);
+    while (i < size)
+    {
+        (*range)[i] = min + i;
+        i++;
+    }
+    return (size);
 }

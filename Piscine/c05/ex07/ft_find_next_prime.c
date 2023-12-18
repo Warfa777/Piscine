@@ -6,7 +6,7 @@
 /*   By: sliberat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 22:06:01 by sliberat          #+#    #+#             */
-/*   Updated: 2023/12/13 14:54:59 by sliberat         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:04:32 by sliberat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int	ft_is_prime(int nb)
 		return (0);
 	if (nb == 1 || nb == 0)
 		return (0);
-	while (i < nb)
+	if (nb == 2)
+		return (1);
+	while (i < nb && i <= 46343)
 	{
 		if (nb % i != 0)
 			i++;

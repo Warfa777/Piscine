@@ -19,13 +19,11 @@ int	ft_iterative_factorial(int nb)
 	factorial = 1;
 	if (nb == 0)
 	{
-		factorial = 1;
-		return (factorial);
+		return (1);
 	}
 	if (nb < 0)
 	{
-		factorial = 0;
-		return (factorial);
+		return (0);
 	}
 	while (i < nb && nb > 0)
 	{
